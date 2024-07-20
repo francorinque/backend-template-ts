@@ -1,0 +1,24 @@
+{
+  "name": "backend-probando-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run test",
+      "npm run prettier"
+    ]
+  }
+}
