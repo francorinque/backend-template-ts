@@ -5,20 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "format": "biome format --write ./src",
+    "lint-check": "biome lint ./src",
+    "lint-apply": "biome check --apply ./src",
+    "lint": "npm run format && npm run lint-check && npm run lint-apply",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "husky": "^9.1.1",
-    "lint-staged": "^15.2.7"
+  "dependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5"
   },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "npm run test",
-      "npm run prettier"
-    ]
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3"
   }
 }
